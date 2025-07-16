@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Summary</title>
+    <title>RSVP Summary</title>
 </head>
 <body>
-    <h2>📝 RSVP Summary</h2>
+    <h2>✅ People Who Are Coming</h2>
     <ul>
         {% for guest in guests %}
-            <li>{{ guest[1] }} (+{{ guest[3] - 1 }})</li>
+            <li>{{ guest[0] }} (+{{ guest[1] - 1 }})</li>
         {% endfor %}
     </ul>
     <h3>Total People Attending: {{ total }}</h3>
