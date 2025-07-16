@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSVP</title>
+</head>
+<body>
+    <h1>🎉 Wedding RSVP</h1>
+    <form action="/submit" method="POST">
+        Name:<br>
+        <input type="text" name="name" required><br><br>
+
+        Are you coming?<br>
+        <input type="radio" name="coming" value="yes" required> Yes<br>
+        <input type="radio" name="coming" value="no"> No<br><br>
+
+        How many people including you?<br>
+        <input type="number" name="number" value="1" min="1"><br><br>
+
+        <input type="submit" value="Submit RSVP">
+    </form>
+</body>
+</html>

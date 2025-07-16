@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summary</title>
+</head>
+<body>
+    <h2>📝 RSVP Summary</h2>
+    <ul>
+        {% for guest in guests %}
+            <li>{{ guest[1] }} (+{{ guest[3] - 1 }})</li>
+        {% endfor %}
+    </ul>
+    <h3>Total People Attending: {{ total }}</h3>
+</body>
+</html>
