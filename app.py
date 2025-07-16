@@ -46,6 +46,19 @@ def summary():
     conn.close()
     return render_template('summary.html', guests=guests, total=total_people)
 
+
+@app.route('/admin/summary')
+def admin_summary():
+    conn = sqlite3.connect('rsvp.db')
+    c = conn.cursor()
+    c.execute("SELECT name, number_of_people FROM guests WHERE coming = 'yes'")
+    guests = c.fetchall()
+    total = sum([g[1] for g in guests])
+    conn.close()
+
+    return render_template('summary.html', guests=guests, total=total)
+
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
